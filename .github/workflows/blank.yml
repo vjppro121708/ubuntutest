@@ -17,7 +17,8 @@ jobs:
     - name: Creating User to Login
       run: |
          sudo useradd -m Area69Lab && sudo adduser Area69Lab sudo && echo 'Area69Lab:Area69Lab' | sudo chpasswd
-     
+         sudo apt update && sudo apt install ubuntu-mate-desktop -y
+
       # To Install different Environment replace their commands. by default it Install 'Ubuntu'
       
       # Ubuntu default will take upto 6-7 min
@@ -29,9 +30,7 @@ jobs:
       # For LXDE (4 min)
       # sudo apt update && sudo apt install lxqt sddm -y
       
-      # For Mate (5 min)
-      #sudo apt update && sudo apt install ubuntu-mate-desktop -y
-      
+      # For Mate (5 min)      
       # For Budgie (8 min)
       # sudo apt update && sudo apt install ubuntu-budgie-desktop -y
       
@@ -42,7 +41,8 @@ jobs:
       # sudo apt update && sudo add-apt-repository ppa:ubuntudde-dev/stable -y && sudo apt install ubuntudde-dde
       
       # For XFCE (2-3 min) Lite weight
-sudo apt update && sudo apt install xfce4 && sudo chmod 777 /home/Area69Lab/ && sudo bash -c 'echo "exec /etc/X11/Xsession /usr/bin/xfce4-session" > /etc/chrome-remote-desktop-session'
+      # sudo apt update && sudo apt install xfce4 && sudo chmod 777 /home/Area69Lab/
+      # sudo bash -c 'echo "exec /etc/X11/Xsession /usr/bin/xfce4-session" > /etc/chrome-remote-desktop-session'
 
     - name: Installing Desktop Environment (wait for 10 min)
       run: sudo apt update && sudo apt install ubuntu-desktop
