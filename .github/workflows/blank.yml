@@ -14,7 +14,7 @@ jobs:
          sudo apt install -y curl
     - name: Download Astra
       run: |
-         curl -Lo /usr/bin/astra https://cesbo.com/astra-latest
+         sudo curl -Lo /usr/bin/astra https://cesbo.com/astra-latest
          chmod +x /usr/bin/astra
     - name: Install Astra
       run: astra init
