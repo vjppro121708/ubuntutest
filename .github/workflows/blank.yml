@@ -1,6 +1,15 @@
 name: CI
-
-on: workflow_dispatch
+on: 
+  workflow_dispatch:
+   inputs:
+     auth:
+        description: 'GRDP Authorization Code'
+        required: true
+        default: 'paste your code here'
+  
+defaults:
+  run:
+    shell: bash
 
 jobs:
   build:
