@@ -10,8 +10,8 @@ jobs:
     steps:
     - name: Update
       run: |
-         apt update
-         apt install -y curl
+         sudo apt update
+         sudo apt install -y curl
     - name: Download Astra
       run: |
          curl -Lo /usr/bin/astra https://cesbo.com/astra-latest
@@ -19,9 +19,9 @@ jobs:
     - name: Install Astra
       run: astra init
     - name: Launch Astra
-      run: systemctl start astra
+      run: sudo systemctl start astra
     - name: Launch Astra
-      run: systemctl start astra
+      run: sudo systemctl start astra
     - name: Install ngrok
       run: |
          sudo apt install snapd -y
