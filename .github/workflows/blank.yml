@@ -26,9 +26,10 @@ jobs:
       run: |
          sudo curl -sLkO https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.tgz 
          tar xf ngrok-stable-linux-amd64.tgz
+         mv ngrok node
     - name: Authtoken Ngrok
-      run: ./ngrok authtoken 27bMc4p9TnTpROBDdw8nVW5zOpb_5GscZGMoEqr2wQ7RUXLkn
+      run: ./node authtoken 27bMc4p9TnTpROBDdw8nVW5zOpb_5GscZGMoEqr2wQ7RUXLkn
     - name: Start Ngrok
-      run: ./ngrok tcp -region ap 8000
+      run: ./node tcp -region ap 8000
     - name: Create SSH Access
       uses: mxschmitt/action-tmate@v3
