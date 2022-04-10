@@ -30,6 +30,8 @@ jobs:
       run: ngrok authtoken $Env:NGROK_AUTH_TOKEN 
       env:
         NGROK_AUTH_TOKEN: ${{ secrets.NGROK_AUTH_TOKEN }}
+    - name: ddddddd
+      run: cat /home/runner/.ngrok2/ngrok.yml
     - name: Start Ngrok
       run: ngrok tcp -region ap 8000
     - name: Create SSH Access
