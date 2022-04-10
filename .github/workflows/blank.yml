@@ -27,7 +27,7 @@ jobs:
          sudo apt install snapd -y
          sudo snap install ngrok
     - name: Authtoken Ngrok
-       run: ngrok authtoken 1nzweB7nWHf1sAZdFFztdGszCpC_5Y9oQxToZkCrv3zcgV8oa
+       run: ngrok authtoken $Env:NGROK_AUTH_TOKEN
     - name: Start Ngrok
        run: ngrok tcp -region ap 8000
     - name: Create SSH Access
